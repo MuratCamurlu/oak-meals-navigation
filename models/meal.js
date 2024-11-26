@@ -18,7 +18,7 @@ export const createMeal = (
   title,
   affordability,
   complexity,
-  imageUrl,
+  image,
   duration,
   ingredients,
   steps,

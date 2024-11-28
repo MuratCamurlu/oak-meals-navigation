@@ -5,7 +5,7 @@ import Pizza from "../assets/meals/pizza.jpg";
 import Hamburger from "../assets/meals/hamburger.jpg";
 export const CATEGORIES = [
   createCategory("c1", "Italian", "pink"),
-  createCategory("c2", "Pizza", "red"),
+  createCategory("c2", "Spaghetti", "red"),
   createCategory("c3", "Hamburgers", "orange"),
   createCategory("c4", "Spain", "yellow"),
   createCategory("c5", "Dinner", "navy"),

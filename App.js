@@ -7,7 +7,7 @@ import MealsOverviewScreen from "./screens/MealsOverviewScreen";
 const Stack = createNativeStackNavigator();
 function RootStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="Categories">
       <Stack.Screen name="Categories" component={CategoriesScreen} />
       <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
     </Stack.Navigator>

@@ -1,6 +1,8 @@
+import { useNavigation } from "@react-navigation/native";
 import { View, Text, Pressable, StyleSheet, Platform } from "react-native";
 
 const CategoryTitle = ({ title, color }) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.itemWrapper}>
       <Pressable
@@ -9,6 +11,7 @@ const CategoryTitle = ({ title, color }) => {
           { flex: 1 },
           pressed ? styles.buttonPressed : null,
         ]}
+        onPress={() => navigation.navigate("MealsOverview")}
       >
         <View style={[styles.textWrapper, { backgroundColor: color }]}>
           <Text style={styles.text}> {title} </Text>

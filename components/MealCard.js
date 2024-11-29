@@ -12,7 +12,15 @@ const MealCard = ({ title, image, affordability, duration, complexity }) => {
     <View style={styles.card}>
       <Pressable>
         <View style={styles.contentWrapper}>
-          <Image source={image} style={styles.image} />
+          <Image
+            source={image}
+            // onError={() => setImageSource(require("../assets/meals/pizza.jpg"))}
+            // source={{
+            //   uri: "https://www.deliciouslycleaneats.com.au/wp-content/uploads/2018/08/Meal-Plan-Spread1.jpg",
+            // }}l
+            // source={require("../assets/meals/pizza.jpg")}
+            style={styles.image}
+          />
           <View style={styles.detailsWrapper}>
             <Text style={styles.title}> {title} </Text>
             <View style={styles.details}>

@@ -7,8 +7,21 @@ import MealsOverviewScreen from "./screens/MealsOverviewScreen";
 const Stack = createNativeStackNavigator();
 function RootStack() {
   return (
-    <Stack.Navigator initialRouteName="Categories">
-      <Stack.Screen name="Categories" component={CategoriesScreen} />
+    <Stack.Navigator
+      initialRouteName="Categories"
+      screenOptions={{
+        headerStyle: { backgroundColor: "maroon" },
+        headerTintColor: "white",
+        contentStyle: { backgroundColor: "#ff4d4d" },
+      }}
+    >
+      <Stack.Screen
+        name="Categories"
+        component={CategoriesScreen}
+        options={{
+          title: "All Categories",
+        }}
+      />
       <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
     </Stack.Navigator>
   );
@@ -16,7 +29,7 @@ function RootStack() {
 export default function App() {
   return (
     <View style={styles.mainWrapper}>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <NavigationContainer>
         <RootStack />
       </NavigationContainer>

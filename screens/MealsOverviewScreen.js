@@ -12,7 +12,7 @@ const MealsOverviewScreen = () => {
   );
 
   const renderMealItem = (meal) => {
-    return <MealCard title={meal.item.title} />;
+    return <MealCard {...meal.item} />;
   };
 
   return (

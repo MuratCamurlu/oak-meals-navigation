@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import {
   View,
   Text,
@@ -7,10 +8,21 @@ import {
   Platform,
 } from "react-native";
 
-const MealCard = ({ title, image, affordability, duration, complexity }) => {
+const MealCard = ({
+  title,
+  image,
+  affordability,
+  duration,
+  complexity,
+  id,
+}) => {
+  const navigation = useNavigation();
+  const navigationHandler = () => {
+    navigation.navigate("MealDetail", { mealId: id });
+  };
   return (
     <View style={styles.card}>
-      <Pressable>
+      <Pressable onPress={navigationHandler}>
         <View style={styles.contentWrapper}>
           <Image
             source={image}

@@ -1,11 +1,19 @@
 import { View, Text, FlatList } from "react-native";
-import { MEALS } from "../data/fake-data";
+import { MEALS, CATEGORIES } from "../data/fake-data";
 import { useRoute } from "@react-navigation/native";
 import MealCard from "../components/MealCard";
-const MealsOverviewScreen = () => {
+import { useEffect } from "react";
+const MealsOverviewScreen = ({ navigation }) => {
   // const { itemId } = route.params;
   const { params } = useRoute();
   const { itemId } = params;
+
+  useEffect(() => {
+    const categoryTitle = CATEGORIES.find((item) => item.id === itemId).title;
+    navigation.setOptions({
+      title: categoryTitle,
+    });
+  }, [itemId, navigation]);
 
   const selectedMeal = MEALS.filter(
     (mealItem) => mealItem.categoryIds.indexOf(itemId) >= 0

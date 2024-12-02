@@ -4,6 +4,7 @@ import CategoriesScreen from "./screens/CategoriesScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MealsOverviewScreen from "./screens/MealsOverviewScreen";
+import MealDetailScreen from "./screens/MealDetailScreen";
 const Stack = createNativeStackNavigator();
 function RootStack() {
   return (
@@ -22,7 +23,17 @@ function RootStack() {
           title: "All Categories",
         }}
       />
-      <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
+      <Stack.Screen
+        name="MealsOverview"
+        component={MealsOverviewScreen}
+        // options={({ route, navigation }) => {
+        //   const { itemId } = route.params;
+        //   return {
+        //     title: itemId,
+        //   };
+        // }}
+      />
+      <Stack.Screen name="MealDetail" component={MealDetailScreen} />
     </Stack.Navigator>
   );
 }
